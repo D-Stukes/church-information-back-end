@@ -16,7 +16,7 @@ CREATE TABLE announcements(
  time VARCHAR(20) NOT NULL,
  contributor TEXT NOT NULL,
  is_member BOOLEAN,
- is_private BOOLEAN,
+ is_private BOOLEAN
  );
  
 
@@ -26,7 +26,7 @@ CREATE TABLE charities(
  id SERIAL PRIMARY KEY,
  name TEXT NOT NULL,
  description VARCHAR(900),
- donations VARCHAR(20)
+ donations VARCHAR(20),
  month VARCHAR(100),
- year VARCHAR(20) NOT NULL,
+ year VARCHAR(20) NOT NULL
  );
