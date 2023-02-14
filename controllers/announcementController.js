@@ -1,7 +1,7 @@
 const express = require("express");
 const announcements = express.Router()
 
-const { checkName, checkBoolean1, checkBoolean2 } = require("../validations/checkAnnouncements");
+const { checkName, checkBoolean1, checkBoolean2 } = require("../validations/checkAnnouncments");
 const { 
   getAllAnnouncements, 
   getAnnouncement, 

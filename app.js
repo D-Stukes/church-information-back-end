@@ -3,9 +3,12 @@ const cors = require("cors");
 const express = require("express");
 const announcementController = require("./controllers/announcementController")
 
+ // CONFIGURATION
+ const app = express();
+
 //MIDDLEWARE
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 app.use("/announcements", announcementController)
 
 //ROUTES
