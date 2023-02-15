@@ -10,7 +10,6 @@ const checkName = (req, res, next) => {
   
   //CHECK BOOLEAN
   const checkBoolean1 = (req, res, next) => {
-
     if (
       req.body.is_member === true ||
       req.body.is_member === false 
@@ -20,17 +19,19 @@ const checkName = (req, res, next) => {
       res.status(400).json({ error: "is_member must be a boolean value" });
     }
   }
+  
   const checkBoolean2 = (req, res, next) => {
-
     if (
-      req.body.is_private === true ||
-      req.body.is_private === false 
+      req.body.is_public === true ||
+      req.body.is_public === false 
+      ||
+      req.body.is_public === undefined
     ) {
       next();
     } else {
-      res.status(400).json({ error: "is_private must be a boolean value" });
+      res.status(400).json({ error: "is_public must be a boolean value" });
     }
-  }
+  };
 
 
   module.exports = { checkName, checkBoolean1, checkBoolean2 };

@@ -1,7 +1,7 @@
 //DEPENDENCIES
-const cors = require("cors");
 const express = require("express");
-const announcementController = require("./controllers/announcementController")
+const cors = require("cors");
+const announcementController = require("./controllers/announcementController.js");
 
  // CONFIGURATION
  const app = express();
@@ -13,7 +13,7 @@ app.use("/announcements", announcementController)
 
 //ROUTES
 app.get("/", (req, res) => {
-    res.send("Welcome to this Church Information App")
+    res.send("Welcome to this Church Information App");
 })
 
 //404 PAGE

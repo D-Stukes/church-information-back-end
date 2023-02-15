@@ -1,7 +1,6 @@
 const express = require("express");
 const announcements = express.Router()
-
-const { checkName, checkBoolean1, checkBoolean2 } = require("../validations/checkAnnouncments");
+const { checkName, checkBoolean1, checkBoolean2 } = require("../validations/checkAnnouncements");
 const { 
   getAllAnnouncements, 
   getAnnouncement, 
@@ -9,8 +8,6 @@ const {
   deleteAnnouncement, 
   updateAnnouncement } = require("../queries/announcements");
 
-
-  
 // INDEX
 announcements.get("/", async (req, res) => {
     const allAnnouncements = await getAllAnnouncements();

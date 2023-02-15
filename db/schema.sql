@@ -5,18 +5,18 @@ CREATE DATABASE announcements_dev;
 
 DROP TABLE IF EXISTS announcements;
 
-CREATE TABLE announcements(
+CREATE TABLE announcements (
  id SERIAL PRIMARY KEY,
  church_name TEXT,
  title TEXT NOT NULL,
  description VARCHAR(900),
  type TEXT,
  location VARCHAR(100),
- date VARCHAR NOT NULL,
+ date VARCHAR(20) NOT NULL,
  time VARCHAR(20) NOT NULL,
  contributor TEXT NOT NULL,
  is_member BOOLEAN,
- is_private BOOLEAN
+ is_public BOOLEAN
  );
  
 
