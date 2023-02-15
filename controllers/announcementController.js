@@ -26,14 +26,21 @@ announcements.get("/", async (req, res) => {
 //SHOW
 announcements.get("/:id", async (req, res) => {
   const { id } = req.params;
-  const announcement = await getAnnouncement(id)
-  console.log("announcement", announcement);
-  if (!announcement.message) {
-    res.status(200).json(announcement);
-  } else {
-    res.status(400).json({error : "not found "})
+  // const announcement = await getAnnouncement(id)
+  // console.log("announcement", announcement);
+    try {
+      const announcement = await getAnnouncement(id)
+      res.status(200).json(announcement)
+    } catch (error) {
+      res.status(400).json({error : "not found "})
+    }
   }
-});
+);
+  // if (!announcement.message) {
+  //   res.status(200).json(announcement);
+  // } else {
+  //   res.status(400).json({error : "not found "})
+  // }
 
 //CREATE
 announcements.post("/", checkName, checkBoolean1, checkBoolean2, async (req, res) => {
