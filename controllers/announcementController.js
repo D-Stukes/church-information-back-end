@@ -9,8 +9,8 @@ const {
   updateAnnouncement } = require("../queries/announcements");
 
 
-//MIDDLEWARE   - just recently added on 2-15-23 modeled after Bookmarks example, to see if it helps, since Index and id routes are not working
-// announcements.use("/announcements", announcementController)
+//MIDDLEWARE   - would be needed if I add and join additional tables
+// e.g announcements.use("/charities", charitiesController)
 
 // INDEX
 announcements.get("/", async (req, res) => {
