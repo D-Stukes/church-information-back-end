@@ -1,7 +1,7 @@
 
 //CHECK NAME
 const checkName = (req, res, next) => {
-    if (req.body.name) {
+    if (req.body.church_name) {
       next();
     } else {
       res.status(400).json({ error: "Name is required" });
@@ -19,7 +19,7 @@ const checkName = (req, res, next) => {
       res.status(400).json({ error: "is_member must be a boolean value" });
     }
   }
-  
+
   const checkBoolean2 = (req, res, next) => {
     if (
       req.body.is_public === true ||

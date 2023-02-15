@@ -1,12 +1,16 @@
 const express = require("express");
 const announcements = express.Router()
-const { checkName, checkBoolean1, checkBoolean2 } = require("../validations/checkAnnouncements");
+const { checkName, checkBoolean1, checkBoolean2 } = require("../validations/checkAnnouncements.js");
 const { 
   getAllAnnouncements, 
   getAnnouncement, 
   createAnnouncement, 
   deleteAnnouncement, 
   updateAnnouncement } = require("../queries/announcements");
+
+
+//MIDDLEWARE   - just recently added on 2-15-23 modeled after Bookmarks example, to see if it helps, since Index and id routes are not working
+// announcements.use("/announcements", announcementController)
 
 // INDEX
 announcements.get("/", async (req, res) => {
